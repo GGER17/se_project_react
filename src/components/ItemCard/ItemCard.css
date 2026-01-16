@@ -1,0 +1,26 @@
+.itemcard {
+  max-width: 325px;
+  max-height: 328px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.itemcard__type {
+  position: absolute;
+  z-index: 3;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 2px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.itemcard__clothing {
+  max-width: 325px;
+  max-height: 328px;
+  border-radius: 19px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
