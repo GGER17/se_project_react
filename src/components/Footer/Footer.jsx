@@ -1,5 +1,12 @@
+import "./Footer.css";
+
 function Footer() {
-  return <></>;
+  return (
+    <footer className="footer">
+      <p className="footer__text">Developed by Grecia Espinoza</p>
+      <p className="footer__text">2026</p>
+    </footer>
+  );
 }
 
 export default Footer;

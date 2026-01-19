@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 1);
+  font-family: "Cabinet Grotesk";
+  font-weight: 500;
+  margin: 85px 0 0;
+}
+
+.footer__text {
+  margin: 0;
+}

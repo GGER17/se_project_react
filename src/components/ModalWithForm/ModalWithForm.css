@@ -1,0 +1,73 @@
+.modal__form-container {
+  padding: 28px 28px 36px;
+  max-width: 496px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  z-index: 10;
+}
+
+.modal__title {
+  margin: 0;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-family: "Cabinet Grotesk";
+}
+
+.modal__form-header {
+  margin: 0 0 24px;
+}
+
+.modal__form-label {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 8px;
+}
+
+.modal__form-input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  margin: 0 0 24px;
+}
+
+.modal__form-btn {
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  padding: 8px 16px;
+  max-width: 124px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__form-weather {
+  border: none;
+  margin: 0 0 32px;
+}
+
+.modal__form-legend {
+  margin: 0 0 12px;
+}
+
+.modal__form-weather-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__form-label-btn {
+  display: flex;
+  gap: 8px;
+}
+
+.modal__form-radio-btn {
+  color: rgba(0, 0, 0, 1);
+}
+
+.modal__form-label {
+  margin: 0;
+}
