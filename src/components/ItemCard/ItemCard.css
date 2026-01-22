@@ -19,8 +19,7 @@
 }
 
 .item-card__clothing {
-  width: 325px;
-  height: 328px;
+  width: 323px;
   object-fit: contain;
   border-radius: 19px;
   border: 1px solid rgba(0, 0, 0, 0.3);
