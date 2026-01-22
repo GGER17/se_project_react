@@ -106,8 +106,47 @@
     display: flex;
     flex-direction: column;
     background: #fff;
-    padding: 24px;
+    padding: 11px 11px 52.43px;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 343px;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: -38px;
+  }
+
+  .mobile-menu__group {
+    display: flex;
+    gap: 12px;
+    margin: 0 0 32px;
+  }
+
+  .mobile-menu__add-btn {
+    margin: 0;
+  }
+
+  .mobile-menu__username {
+    padding: 8px 0 0;
+  }
+
+  .mobile-menu__avatar {
+    height: 40px;
+    width: 40px;
+  }
+
+  .mobile-menu__close-btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 0;
+  }
+
+  .mobile-menu__contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 27.58px 0 0;
   }
 }

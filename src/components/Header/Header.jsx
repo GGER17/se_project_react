@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./Header.css";
 import xblack from "../../assets/xblack.svg";
 
-function Header({ handleOpenAddGarmentModal, handleOpenNavModal }) {
+function Header({ handleOpenAddGarmentModal }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -20,41 +20,53 @@ function Header({ handleOpenAddGarmentModal, handleOpenNavModal }) {
     <header className="header">
       <div className="header__mobile-group">
         <img src={logo} alt="WTWR Logo" className="header__logo" />
-        <button onClick={toggleMobileMenu} className="header__nothamburger-btn">
-          {" "}
-          {!isMobileMenuOpened ? (
+        {!isMobileMenuOpened && (
+          <button
+            onClick={toggleMobileMenu}
+            className="header__nothamburger-btn"
+          >
+            {" "}
             <img
               src={nothamburger}
               alt="Open menu"
               className="header__nothamburger-img"
             />
-          ) : (
-            <img
-              src={xblack}
-              alt="Close menu"
-              className="header__nothamburger-img"
-            />
-          )}{" "}
-        </button>
-
+          </button>
+        )}{" "}
         {isMobile && isMobileMenuOpened && (
           <div
             className={`mobile-menu ${isMobileMenuOpened ? "mobile-menu_open" : ""}`}
           >
             {" "}
             <button
-              onClick={handleOpenAddGarmentModal}
-              className="header__add-btn"
+              onClick={toggleMobileMenu}
+              className="mobile-menu__close-btn"
             >
-              {" "}
-              + Add clothes{" "}
-            </button>{" "}
-            <p className="header__username">Terrence Tegegne</p>{" "}
-            <img
-              src={avatar}
-              alt="User's avatar"
-              className="header__avatar"
-            />{" "}
+              <img
+                src={xblack}
+                alt="Close menu"
+                className="header__nothamburger-img"
+              />
+            </button>
+            <div className="mobile-menu__contents">
+              <div className="mobile-menu__group">
+                <p className="header__username mobile-menu__username">
+                  Terrence Tegegne
+                </p>{" "}
+                <img
+                  src={avatar}
+                  alt="User's avatar"
+                  className="header__avatar mobile-menu__avatar"
+                />{" "}
+              </div>
+              <button
+                onClick={handleOpenAddGarmentModal}
+                className="header__add-btn mobile-menu__add-btn"
+              >
+                {" "}
+                + Add clothes{" "}
+              </button>{" "}
+            </div>
           </div>
         )}
       </div>

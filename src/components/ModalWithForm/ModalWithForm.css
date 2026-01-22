@@ -48,6 +48,7 @@
   line-height: 20px;
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 16px;
+  cursor: pointer;
 }
 
 .modal__weather {
@@ -116,6 +117,7 @@ input[type="radio"] {
     right: 20px;
     height: 21.21px;
     width: 21.21px;
+    cursor: pointer;
   }
 
   .modal__submit-btn {
