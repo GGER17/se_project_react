@@ -4,7 +4,6 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-
 import { defaultClothingItems } from "../../utils/defaultClothingItems";
 import "./App.css";
 
@@ -34,13 +33,21 @@ function App() {
     setActiveModal("add-garment-modal");
   }
 
+  function handleOpenNavModal() {
+    setActiveModal("nav-modal");
+  }
+
   function handleWeatherChange(event) {
     setSelectedWeather(event.target.value);
   }
 
   return (
     <div className="app">
-      <Header handleOpenAddGarmentModal={handleOpenAddGarmentModal} />
+      <Header
+        handleOpenAddGarmentModal={handleOpenAddGarmentModal}
+        handleOpenNavModal={handleOpenNavModal}
+        onCloseClick={handleCloseItemModal}
+      />
       <Main
         clothingItems={clothingItems}
         handleOpenItemModal={handleOpenItemModal}

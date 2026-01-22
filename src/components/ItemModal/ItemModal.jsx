@@ -13,7 +13,7 @@ function ItemModal({ card, isOpen, onCloseClick }) {
 
   return (
     <div className={`modal ${isOpen ? "modal_is-opened" : ""}`}>
-      <div className="modal__container">
+      <div className="modal__container modal__container-item">
         <button className="modal__close-btn" onClick={handleCloseItemModal}>
           <img
             className="modal__close-icon"

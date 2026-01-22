@@ -30,6 +30,11 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
+  max-width: 496px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  z-index: 10;
 }
 
 .modal__image {
@@ -55,4 +60,29 @@
 
 .modal__text {
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .modal_form {
+    padding: 10px;
+  }
+
+  .modal__container-item {
+    width: 343px;
+  }
+
+  .modal__image {
+    max-width: 343px;
+  }
+
+  .modal__close-btn {
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__footer {
+    padding: 20px 20px 40px;
+    line-height: 24px;
+    border-radius: 12px;
+  }
 }

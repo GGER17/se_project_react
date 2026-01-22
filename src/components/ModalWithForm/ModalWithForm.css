@@ -1,4 +1,4 @@
-.modal__container {
+.modal__container-form {
   max-width: 496px;
   width: 100%;
   background-color: rgba(255, 255, 255, 1);
@@ -45,6 +45,7 @@
   padding: 8px 16px;
   max-width: 124px;
   border-radius: 4px;
+  line-height: 20px;
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 16px;
 }
@@ -72,8 +73,8 @@
   gap: 8px;
 }
 
-.modal__radio {
-  color: rgba(0, 0, 0, 1);
+input[type="radio"] {
+  accent-color: rgba(0, 0, 0, 1);
 }
 
 .modal__radio-label {
@@ -83,4 +84,43 @@
 .modal__close-btn_type_form {
   top: 20px;
   right: 28px;
+}
+
+@media (max-width: 768px) {
+  .modal_is-opened {
+    padding: 0;
+  }
+
+  .modal__form {
+    padding: 32px 16px;
+    max-width: 375px;
+  }
+
+  .modal__container-form {
+    top: auto;
+    bottom: 0;
+    transform: translateY(50px);
+    max-width: 375px;
+  }
+
+  .modal__title {
+    margin: 0 0 13px;
+  }
+
+  .modal__weather {
+    margin: 0 0 30px;
+  }
+
+  .modal__close-btn_type_form {
+    top: 20px;
+    right: 20px;
+    height: 21.21px;
+    width: 21.21px;
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+    padding: 12px 126px;
+    max-width: 343px;
+  }
 }
