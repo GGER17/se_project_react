@@ -1,11 +1,11 @@
-.itemcard {
+.item-card {
   max-width: 325px;
   max-height: 328px;
   border-radius: 8px;
   position: relative;
 }
 
-.itemcard__type {
+.item-card__type {
   position: absolute;
   z-index: 3;
   top: 15px;
@@ -18,7 +18,7 @@
   margin: 0;
 }
 
-.itemcard__clothing {
+.item-card__clothing {
   width: 325px;
   height: 328px;
   object-fit: contain;

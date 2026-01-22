@@ -1,5 +1,4 @@
-.modal__form-container {
-  padding: 28px 28px 36px;
+.modal__container {
   max-width: 496px;
   width: 100%;
   background-color: rgba(255, 255, 255, 1);
@@ -7,67 +6,81 @@
   z-index: 10;
 }
 
-.modal__title {
-  margin: 0;
-}
-
 .modal__form {
+  padding: 28px 28px 36px;
   display: flex;
   flex-direction: column;
   font-weight: 700;
   font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  max-width: 440px;
+  line-height: 20px;
 }
 
-.modal__form-header {
+.modal__title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.modal__header {
   margin: 0 0 24px;
 }
 
-.modal__form-label {
+.modal__label {
   display: flex;
   flex-direction: column;
-  margin: 0 0 8px;
+  margin: 24px 0 0;
 }
 
-.modal__form-input {
+.modal__input {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
-  margin: 0 0 24px;
+  margin: 8px 0 0;
+  line-height: 24px;
 }
 
-.modal__form-btn {
+.modal__submit-btn {
   color: rgba(255, 255, 255, 1);
   border: none;
   padding: 8px 16px;
   max-width: 124px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
 }
 
-.modal__form-weather {
+.modal__weather {
   border: none;
   margin: 0 0 32px;
+  padding: 0;
 }
 
-.modal__form-legend {
+.modal__legend {
   margin: 0 0 12px;
+  padding: 24px 0 0;
 }
 
-.modal__form-weather-container {
+.modal__radio-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.modal__form-label-btn {
+.modal__radio-label {
   display: flex;
   gap: 8px;
 }
 
-.modal__form-radio-btn {
+.modal__radio {
   color: rgba(0, 0, 0, 1);
 }
 
-.modal__form-label {
+.modal__radio-label {
   margin: 0;
+}
+
+.modal__close-btn_type_form {
+  top: 20px;
+  right: 28px;
 }

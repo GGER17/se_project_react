@@ -6,12 +6,12 @@ function ItemCard({ data, onCardClick }) {
   }
 
   return (
-    <div className="itemcard">
-      <p className="itemcard__type">{data.name}</p>
+    <div className="item-card">
+      <p className="item-card__type">{data.name}</p>
       <img
         src={data.link}
         alt={data.name}
-        className="itemcard__clothing"
+        className="item-card__clothing"
         onClick={handleOpenCard}
       />
     </div>
