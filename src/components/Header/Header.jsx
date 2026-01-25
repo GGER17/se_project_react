@@ -4,8 +4,9 @@ import avatar from "../../assets/avatar.svg";
 import { useState } from "react";
 import "./Header.css";
 import xblack from "../../assets/xblack.svg";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
-function Header({ handleOpenAddGarmentModal }) {
+function Header({ handleOpenAddGarmentModal, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -18,71 +19,79 @@ function Header({ handleOpenAddGarmentModal }) {
 
   return (
     <header className="header">
-      <div className="header__mobile-group">
-        <img src={logo} alt="WTWR Logo" className="header__logo" />
-        {!isMobileMenuOpened && (
-          <button
-            onClick={toggleMobileMenu}
-            className="header__nothamburger-btn"
-          >
-            {" "}
-            <img
-              src={nothamburger}
-              alt="Open menu"
-              className="header__nothamburger-img"
-            />
-          </button>
-        )}{" "}
-        {isMobile && isMobileMenuOpened && (
-          <div
-            className={`mobile-menu ${isMobileMenuOpened ? "mobile-menu_open" : ""}`}
-          >
-            {" "}
+      <div className="header__side">
+        <div className="header__mobile-group">
+          <img src={logo} alt="WTWR Logo" className="header__logo" />
+          {!isMobileMenuOpened && (
             <button
               onClick={toggleMobileMenu}
-              className="mobile-menu__close-btn"
+              className="header__nothamburger-btn"
             >
+              {" "}
               <img
-                src={xblack}
-                alt="Close menu"
+                src={nothamburger}
+                alt="Open menu"
                 className="header__nothamburger-img"
               />
             </button>
-            <div className="mobile-menu__contents">
-              <div className="mobile-menu__group">
-                <p className="header__username mobile-menu__username">
-                  Terrence Tegegne
-                </p>{" "}
-                <img
-                  src={avatar}
-                  alt="User's avatar"
-                  className="header__avatar mobile-menu__avatar"
-                />{" "}
-              </div>
+          )}{" "}
+          {isMobile && isMobileMenuOpened && (
+            <div
+              className={`mobile-menu ${isMobileMenuOpened ? "mobile-menu_open" : ""}`}
+            >
+              {" "}
               <button
-                onClick={handleOpenAddGarmentModal}
-                className="header__add-btn mobile-menu__add-btn"
+                onClick={toggleMobileMenu}
+                className="mobile-menu__close-btn"
               >
-                {" "}
-                + Add clothes{" "}
-              </button>{" "}
+                <img
+                  src={xblack}
+                  alt="Close menu"
+                  className="header__nothamburger-img"
+                />
+              </button>
+              <div className="mobile-menu__contents">
+                <div className="mobile-menu__group">
+                  <p className="header__username mobile-menu__username">
+                    Terrence Tegegne
+                  </p>{" "}
+                  <img
+                    src={avatar}
+                    alt="User's avatar"
+                    className="header__avatar mobile-menu__avatar"
+                  />{" "}
+                </div>
+                <button
+                  onClick={handleOpenAddGarmentModal}
+                  className="header__add-btn mobile-menu__add-btn"
+                >
+                  {" "}
+                  + Add clothes{" "}
+                </button>{" "}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+        <p className="header__place">
+          {" "}
+          <time dateTime="2026-15-01" className="header__time">
+            {currentDate}
+          </time>
+          , {weatherData.city}
+        </p>
       </div>
-      <p className="header__place">
-        {" "}
-        <time dateTime="2026-15-01" className="header__time">
-          {currentDate}
-        </time>
-        , New York
-      </p>
-      <div className="header__hidden-group">
-        <button onClick={handleOpenAddGarmentModal} className="header__add-btn">
-          + Add clothes
-        </button>
-        <p className="header__username">Terrence Tegegne</p>
-        <img src={avatar} alt="User's avatar" className="header__avatar" />
+      <div className="header__side">
+        <ToggleSwitch />
+        <div className="header__hidden-group">
+          <button
+            onClick={handleOpenAddGarmentModal}
+            className="header__add-btn"
+          >
+            + Add clothes
+          </button>
+          <p className="header__username">Terrence Tegegne</p>
+          <img src={avatar} alt="User's avatar" className="header__avatar" />
+        </div>
       </div>
     </header>
   );

@@ -21,7 +21,7 @@
 }
 
 .header__add-btn {
-  margin: 6px 20px 9px 0;
+  margin: 6px 20px 9px;
   border: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 1);
@@ -59,7 +59,6 @@
 
 .header__hidden-group {
   display: flex;
-  margin-left: auto;
   visibility: visible;
 }
 
@@ -77,6 +76,11 @@
 
 .mobile-menu__close-btn {
   display: none;
+}
+
+.header__side {
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -167,6 +171,12 @@
     flex-direction: column;
     align-items: center;
     margin: 27.58px 0 0;
+  }
+
+  .header__side {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
   }
 }
 
