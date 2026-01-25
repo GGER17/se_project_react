@@ -3,11 +3,9 @@ import { useContext } from "react";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 import { weatherConditionsImages } from "../../utils/constants";
-import "./weatherCard.css";
+import "./WeatherCard.css";
 
 function WeatherCard({ weatherData }) {
-  //TODO destructure the currentTempUnit
-
   const contextValue = useContext(CurrentTemperatureUnitContext);
 
   return (
