@@ -17,9 +17,6 @@
   margin: 0;
 }
 
-.header__time {
-}
-
 .header__add-btn {
   margin: 6px 20px 9px;
   border: none;
@@ -29,6 +26,7 @@
   padding: 0;
   font-size: 20px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .header__username {
@@ -107,6 +105,7 @@
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 1);
     display: block;
+    cursor: pointer;
   }
 
   .header__nothamburger-img {

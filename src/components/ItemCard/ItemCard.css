@@ -3,6 +3,7 @@
   max-height: 328px;
   border-radius: 8px;
   position: relative;
+  cursor: pointer;
 }
 
 .item-card__type {

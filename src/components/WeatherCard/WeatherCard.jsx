@@ -8,6 +8,14 @@ import "./WeatherCard.css";
 function WeatherCard({ weatherData }) {
   const contextValue = useContext(CurrentTemperatureUnitContext);
 
+  const defaultWeatherImage =
+    weatherConditionsImages[weatherData.isDay ? "day" : "night"]["default"]
+      ?.image;
+  const weatherImage =
+    weatherConditionsImages[weatherData.isDay ? "day" : "night"][
+      weatherData.weatherConditions
+    ]?.image;
+
   return (
     <section className="weathercard">
       <p className="weathercard__temp">
@@ -15,14 +23,7 @@ function WeatherCard({ weatherData }) {
         {contextValue.currentTempUnit}
       </p>
       <img
-        src={
-          weatherConditionsImages[weatherData.isDay ? "day" : "night"][
-            weatherData.weatherConditions
-          ]?.image ||
-          weatherConditionsImages[weatherData.isDay ? "day" : "night"][
-            "default"
-          ]?.image
-        }
+        src={weatherImage || defaultWeatherImage}
         alt={`${weatherData.weatherConditions} weather`}
         className="weathercard__image"
       />
