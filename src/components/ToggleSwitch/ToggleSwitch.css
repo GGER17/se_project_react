@@ -38,8 +38,7 @@
 }
 
 .toggle-switch__circle:hover {
-  left: 0;
-  right: 2px;
+  transform: translateX(2px);
 }
 
 .toggle-switch__value_left {
