@@ -63,12 +63,25 @@
   margin: 0;
 }
 
+.modal__footer-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__delete-btn {
+  color: rgba(255, 77, 0, 1);
+  border: none;
+  background-color: transparent;
+  margin: 0 1.56px 0 0;
+  padding: 0;
+}
+
 @media (max-width: 768px) {
   .modal_form {
     padding: 10px;
   }
 
-  .modal__container-item {
+  .modal__container_type_image {
     width: 343px;
   }
 

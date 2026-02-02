@@ -4,38 +4,27 @@ import xgrey from "../../assets/xgrey.svg";
 function ModalWithForm({
   isOpen,
   children,
-  handleSubmit,
   title,
   buttonText,
   name,
-  handleWeatherChange,
   onCloseClick,
-  selectedWeather,
+  values,
+  handleChange,
+  handleChangeSubmit,
 }) {
   function handleCloseItemModal() {
     onCloseClick();
   }
 
-  function handleFormInfo(evt) {
-    evt.preventDefault();
-    const nameInput = document.getElementById("add-garment-name");
-    const nameValue = nameInput.value;
-    const linkInput = document.getElementById("add-garment-link");
-    const linkValue = linkInput.value;
-    const formInputs = {
-      name: nameValue,
-      link: linkValue,
-      weather: selectedWeather,
-    };
-
-    handleSubmit(formInputs);
-
-    evt.target.reset();
-  }
-
   return (
-    <div id="form" className={`modal ${isOpen ? "modal_is-opened" : ""}`}>
-      <div className="modal__container modal__container-form">
+    <div
+      className={`modal ${isOpen ? "modal_is-opened" : ""}`}
+      onClick={onCloseClick}
+    >
+      <div
+        className="modal__container modal__container-form"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           type="button"
           className="modal__close-btn modal__close-btn_type_form"
@@ -43,7 +32,7 @@ function ModalWithForm({
         >
           <img className="modal__close-icon" src={xgrey} alt="Close button" />
         </button>
-        <form onSubmit={handleFormInfo} name={name} className="modal__form">
+        <form onSubmit={handleChangeSubmit} name={name} className="modal__form">
           <h2 className="modal__title">{title}</h2>{" "}
           <label htmlFor="add-garment-name" className="modal__label">
             Name
@@ -52,9 +41,12 @@ function ModalWithForm({
               type="text"
               className="modal__input"
               placeholder="Name"
+              name="name"
               required
               minLength="2"
               maxLength="30"
+              value={values.name}
+              onChange={handleChange}
             />
             <span id="add-garment-name-error" className="modal__error"></span>
           </label>
@@ -65,7 +57,10 @@ function ModalWithForm({
               type="url"
               className="modal__input"
               placeholder="Image URL"
+              name="imageUrl"
               required
+              value={values.imageUrl}
+              onChange={handleChange}
             />
             <span id="add-garment-link-error" className="modal__error"></span>
           </label>
@@ -79,8 +74,8 @@ function ModalWithForm({
                   id="hot"
                   name="weather"
                   value="hot"
-                  checked
-                  onChange={handleWeatherChange}
+                  checked={values.weather === "hot"}
+                  onChange={handleChange}
                 />
                 <label className="modal__radio-weather" htmlFor="hot">
                   Hot
@@ -94,7 +89,8 @@ function ModalWithForm({
                   id="warm"
                   name="weather"
                   value="warm"
-                  onChange={handleWeatherChange}
+                  checked={values.weather === "warm"}
+                  onChange={handleChange}
                 />
                 <label className="modal__radio-weather" htmlFor="warm">
                   Warm
@@ -108,7 +104,8 @@ function ModalWithForm({
                   id="cold"
                   name="weather"
                   value="cold"
-                  onChange={handleWeatherChange}
+                  checked={values.weather === "cold"}
+                  onChange={handleChange}
                 />
                 <label className="modal__radio-weather" htmlFor="cold">
                   Cold

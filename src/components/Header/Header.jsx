@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import logo from "../../assets/logo.svg";
 import nothamburger from "../../assets/nothamburger.svg";
 import avatar from "../../assets/avatar.svg";
@@ -21,7 +23,10 @@ function Header({ handleOpenAddGarmentModal, weatherData }) {
     <header className="header">
       <div className="header__side">
         <div className="header__mobile-group">
-          <img src={logo} alt="WTWR Logo" className="header__logo" />
+          <Link className="header__link" to="/">
+            {" "}
+            <img src={logo} alt="WTWR Logo" className="header__logo" />
+          </Link>
           {!isMobileMenuOpened && (
             <button
               onClick={toggleMobileMenu}
@@ -89,8 +94,10 @@ function Header({ handleOpenAddGarmentModal, weatherData }) {
           >
             + Add clothes
           </button>
-          <p className="header__username">Terrence Tegegne</p>
-          <img src={avatar} alt="User's avatar" className="header__avatar" />
+          <Link className="header__link" to="/profile">
+            <p className="header__username">Terrence Tegegne</p>
+            <img src={avatar} alt="User's avatar" className="header__avatar" />
+          </Link>
         </div>
       </div>
     </header>

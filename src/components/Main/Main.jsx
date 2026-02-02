@@ -11,7 +11,7 @@ function Main({ weatherData, clothingItems, handleOpenItemModal }) {
 
   const currentWeather = getWeatherCondition({ weatherData, clothingItems });
   const filteredClothingItems = clothingItems.filter(
-    (clothingItem) => clothingItem.weather === currentWeather,
+    (clothingItem) => clothingItem.weather === currentWeather.toLowerCase(),
   );
 
   function getWeatherCondition({ weatherData, clothingItems }) {

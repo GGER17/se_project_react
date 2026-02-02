@@ -9,7 +9,7 @@ function ItemCard({ data, onCardClick }) {
     <div className="item-card">
       <p className="item-card__type">{data.name}</p>
       <img
-        src={data.link}
+        src={data.imageUrl}
         alt={data.name}
         className="item-card__clothing"
         onClick={handleOpenCard}
