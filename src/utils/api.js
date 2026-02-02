@@ -25,12 +25,6 @@ function addItem({ name, imageUrl, weather }) {
   });
 }
 
-// TODO
-// -Different parameter (just the id instead of the object)
-// -Different method
-// -No body
-// -Embeded the ID in the URL
-// -Refer to your previous SPOTS project implemintation
 function deleteItem(id) {
   return fetch(`${baseUrl}/items/${id}`, { method: "DELETE" }).then((res) => {
     return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);

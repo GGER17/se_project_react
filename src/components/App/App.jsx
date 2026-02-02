@@ -65,7 +65,7 @@ function App() {
       })
       .catch(console.error);
   }
-  //TODO- Pass as prop
+
   function handleDeleteItem(item) {
     deleteItem(item._id)
       .then(() => {
@@ -94,7 +94,6 @@ function App() {
   useEffect(() => {
     getWeatherData()
       .then((data) => {
-        //TODO-make new items appear first
         setWeatherData(data);
       })
       .catch(console.error);
