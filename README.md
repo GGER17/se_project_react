@@ -22,6 +22,10 @@
 - Adding clothes can be done by looking up the header and clicking at "+ Add Clothes"
 - Fill the form and choose what weather is it suites form and done.
 
+# Pitch video
+
+- Here is my Pitch video. (https://drive.google.com/file/d/1f7JhVpQXWAXFH0ZrvpLwjWqqI7begx7s/view?usp=drive_link)
+
 ---
 
 # React + Vite
