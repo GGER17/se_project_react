@@ -26,6 +26,10 @@
 
 - Here is my Pitch video. (https://drive.google.com/file/d/1f7JhVpQXWAXFH0ZrvpLwjWqqI7begx7s/view?usp=drive_link)
 
+# Backend Repository
+
+- Backend code can be found at. (https://github.com/GGER17/se_project_express)
+
 ---
 
 # React + Vite
