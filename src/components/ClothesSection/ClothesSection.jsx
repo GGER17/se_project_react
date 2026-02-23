@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+
 import ItemCard from "../ItemCard/ItemCard";
 
 import "./ClothesSection.css";
@@ -7,6 +10,12 @@ function ClothesSection({
   handleOpenItemModal,
   handleOpenAddGarmentModal,
 }) {
+  const currentUser = useContext(CurrentUserContext);
+
+  const userItems = clothingItems.filter(
+    (item) => item.owner === currentUser._id,
+  );
+
   return (
     <div className="clothes-section">
       {" "}
@@ -23,7 +32,7 @@ function ClothesSection({
       </div>{" "}
       <ul className="clothes-section__cards">
         {" "}
-        {clothingItems.map((card) => (
+        {userItems.map((card) => (
           <ItemCard
             key={card._id}
             data={card}

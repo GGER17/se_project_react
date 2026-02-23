@@ -7,10 +7,11 @@ function Profile({
   handleOpenItemModal,
   weatherData,
   clothingItems,
+  handleSignOut,
 }) {
   return (
     <div className="profile">
-      <SideBar />
+      <SideBar handleSignOut={handleSignOut} />
       <ClothesSection
         handleOpenItemModal={handleOpenItemModal}
         handleOpenAddGarmentModal={handleOpenAddGarmentModal}
