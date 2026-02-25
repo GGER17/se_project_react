@@ -1,4 +1,7 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.gwtwr.jumpingcrab.com" // Your production backend
+    : "http://localhost:3001";
 
 function getItems() {
   return fetch(`${baseUrl}/items`)
