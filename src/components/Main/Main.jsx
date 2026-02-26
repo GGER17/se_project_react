@@ -6,7 +6,13 @@ import ItemCard from "../ItemCard/ItemCard";
 import "./Main.css";
 import { getWeatherData } from "../../utils/weatherApi";
 
-function Main({ weatherData, clothingItems, handleOpenItemModal }) {
+function Main({
+  weatherData,
+  clothingItems,
+  handleOpenItemModal,
+  onCardLike,
+  currentUser,
+}) {
   const contextValue = useContext(CurrentTemperatureUnitContext);
 
   const currentWeather = getWeatherCondition({ weatherData, clothingItems });
@@ -46,6 +52,8 @@ function Main({ weatherData, clothingItems, handleOpenItemModal }) {
               key={card._id}
               data={card}
               onCardClick={handleOpenItemModal}
+              onCardLike={onCardLike}
+              currentUser={currentUser}
             />
           );
         })}

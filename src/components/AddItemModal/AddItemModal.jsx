@@ -16,6 +16,8 @@ function AddItemModal({ isOpen, handleAddItemSubmit, onCloseClick }) {
     }
   }, [isOpen, setValues]);
 
+  const isFormValid = Object.values(values).every((v) => v.trim() !== "");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     handleAddItemSubmit(values, () => {
@@ -29,6 +31,7 @@ function AddItemModal({ isOpen, handleAddItemSubmit, onCloseClick }) {
       title="New garment"
       name="add-garment-form"
       buttonText="Add garment"
+      isFormValid={isFormValid}
       onCloseClick={onCloseClick}
       values={values}
       handleChange={handleChange}

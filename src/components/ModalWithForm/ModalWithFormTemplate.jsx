@@ -6,6 +6,7 @@ function ModalWithFormTemplate({
   title,
   name,
   buttonText,
+  isFormValid,
   buttonOr,
   onCloseClick,
   onOrClick,
@@ -39,7 +40,11 @@ function ModalWithFormTemplate({
           {" "}
           <h2 className="modal__title">{title}</h2> {children}{" "}
           <div className="modal__submit-btn-template">
-            <button type="submit" className="modal__submit-btn ">
+            <button
+              type="submit"
+              className={`modal__submit-btn ${!isFormValid ? "modal__submit-btn_disabled" : ""}`}
+              disabled={!isFormValid}
+            >
               {" "}
               {buttonText}{" "}
             </button>{" "}

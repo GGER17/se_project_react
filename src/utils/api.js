@@ -1,6 +1,6 @@
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.gwtwr.jumpingcrab.com" // Your production backend
+    ? "https://api.gwtwr.jumpingcrab.com"
     : "http://localhost:3001";
 
 function getItems() {
@@ -38,4 +38,42 @@ function deleteItem(id, token) {
   );
 }
 
-export { getItems, addItem, deleteItem };
+function addCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: { authorization: `Bearer ${token}` },
+  }).then((res) =>
+    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`),
+  );
+}
+
+function removeCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: { authorization: `Bearer ${token}` },
+  }).then((res) =>
+    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`),
+  );
+}
+
+function updateUserInfo({ name, avatar }, token) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name, avatar }),
+  }).then((res) =>
+    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`),
+  );
+}
+
+export {
+  getItems,
+  addItem,
+  deleteItem,
+  addCardLike,
+  removeCardLike,
+  updateUserInfo,
+};

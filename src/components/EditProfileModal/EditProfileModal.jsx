@@ -1,77 +1,68 @@
 import { useEffect } from "react";
-
 import { useForm } from "../../hooks/useForm";
 import ModalWithFormTemplate from "../ModalWithForm/ModalWithFormTemplate";
 
-function LoginModal({
-  isOpen,
-  handleLoginSubmit,
-  onCloseClick,
-  switchModal,
-  loginError,
-}) {
+function EditProfileModal({ isOpen, onCloseClick, onSubmit, currentUser }) {
   const { values, handleChange, setValues } = useForm({
-    email: "",
-    password: "",
+    name: "",
+    avatar: "",
   });
 
   useEffect(() => {
-    if (!isOpen) {
-      setValues({ email: "", password: "" });
+    if (isOpen && currentUser) {
+      setValues({
+        name: currentUser.name || "",
+        avatar: currentUser.avatar || "",
+      });
     }
-  }, [isOpen, setValues]);
+  }, [isOpen, currentUser, setValues]);
 
   const isFormValid = Object.values(values).every((v) => v.trim() !== "");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleLoginSubmit(values, () => {
-      setValues({ email: "", password: "" });
-    });
+    onSubmit(values);
   };
 
   return (
     <ModalWithFormTemplate
       isOpen={isOpen}
-      title="Log In"
-      name="login-form"
-      buttonText="Log In"
-      buttonOr="or Sign Up"
+      title="Change profile data"
+      name="edit-profile-form"
+      buttonText="Save changes"
       isFormValid={isFormValid}
       onCloseClick={onCloseClick}
       handleSubmit={handleSubmit}
-      onOrClick={() => switchModal("register-modal")}
     >
       {" "}
       <label className="modal__label">
         {" "}
-        Email{" "}
+        Name *{" "}
         <input
-          type="email"
-          name="email"
+          type="text"
+          name="name"
           className="modal__input"
-          value={values.email}
+          value={values.name}
           onChange={handleChange}
-          placeholder="Email"
+          placeholder="Your name"
           required
         />{" "}
       </label>{" "}
       <label className="modal__label">
         {" "}
-        Password{" "}
+        Avatar *{" "}
         <input
-          type="password"
-          name="password"
+          type="url"
+          name="avatar"
           className="modal__input"
-          value={values.password}
+          value={values.avatar}
           onChange={handleChange}
-          placeholder="Password"
+          placeholder="Link to avatar"
           required
         />{" "}
       </label>{" "}
-      {loginError && <span className="modal__error-message">{loginError}</span>}
     </ModalWithFormTemplate>
   );
 }
 
-export default LoginModal;
+export default EditProfileModal;

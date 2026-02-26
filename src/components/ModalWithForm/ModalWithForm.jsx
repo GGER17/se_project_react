@@ -11,6 +11,7 @@ function ModalWithForm({
   values,
   handleChange,
   handleChangeSubmit,
+  isFormValid,
 }) {
   function handleCloseItemModal() {
     onCloseClick();
@@ -113,7 +114,11 @@ function ModalWithForm({
               </div>
             </div>
           </fieldset>
-          <button type="submit" className="modal__submit-btn">
+          <button
+            type="submit"
+            className={`modal__submit-btn ${!isFormValid ? "modal__submit-btn_disabled" : ""}`}
+            disabled={!isFormValid}
+          >
             {buttonText}
           </button>
         </form>

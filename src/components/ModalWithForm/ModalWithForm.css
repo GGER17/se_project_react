@@ -47,9 +47,29 @@
   max-width: 124px;
   border-radius: 4px;
   line-height: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 1);
   font-size: 16px;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.modal__submit-btn_disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 1);
+  white-space: nowrap;
+  cursor: not-allowed;
+  border-radius: 4px;
+  padding: 8px 16px;
+  line-height: 20px;
+  font-size: 16px;
+  border: none;
+}
+
+.modal__error-message {
+  color: rgba(255, 77, 0, 1);
+  font-size: 16px;
+  margin: 24px 0 0;
+  display: block;
 }
 
 .modal__weather {
@@ -98,6 +118,7 @@ input[type="radio"] {
 .modal__btn-or {
   border: none;
   color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   background-color: transparent;
 }
 

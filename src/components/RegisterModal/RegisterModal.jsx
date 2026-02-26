@@ -22,6 +22,8 @@ function RegisterModal({
     }
   }, [isOpen, setValues]);
 
+  const isFormValid = Object.values(values).every((v) => v.trim() !== "");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     handleRegisterSubmit(values, () => {
@@ -35,6 +37,7 @@ function RegisterModal({
       name="register-form"
       buttonText="Sign up"
       buttonOr="or Log In"
+      isFormValid={isFormValid}
       onCloseClick={onCloseClick}
       handleSubmit={handleSubmit}
       onOrClick={() => switchModal("login-modal")}
@@ -90,5 +93,3 @@ function RegisterModal({
 }
 
 export default RegisterModal;
-
-//todo strech goals

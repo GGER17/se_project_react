@@ -8,12 +8,39 @@
   cursor: pointer;
 }
 
-.item-card__type {
+.item-card__header {
+  gap: 10px;
+  display: flex;
+  align-items: center;
   position: absolute;
   z-index: 3;
   top: 15px;
   left: 50%;
   transform: translate(-50%);
+}
+
+.item-card__like-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.item-card__like-btn_active {
+  transform: scale(1.15);
+}
+
+.item-card__like-btn:active {
+  transform: scale(0.9);
+}
+
+.item-card__like-icon {
+  width: 18px;
+  height: 15px;
+}
+
+.item-card__type {
   background-color: rgba(255, 255, 255, 1);
   padding: 2px 12px;
   border-radius: 4px;
