@@ -31,14 +31,19 @@
   border-radius: 16px;
   overflow: hidden;
   max-width: 496px;
+  height: 610px;
   width: 100%;
   background-color: rgba(255, 255, 255, 1);
   position: relative;
   z-index: 10;
+  object-fit: contain;
 }
 
 .modal__image {
   display: block;
+  object-fit: contain;
+  max-width: 496px;
+  height: 498px;
 }
 
 .modal__close-btn {
