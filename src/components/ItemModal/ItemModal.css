@@ -38,9 +38,15 @@
   object-fit: contain;
 }
 
+.modal__container_type_image {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal__image {
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  width: 100%;
   max-width: 496px;
   height: 498px;
 }
