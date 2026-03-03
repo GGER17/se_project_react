@@ -1,9 +1,6 @@
 import { useSyncExternalStore } from "react";
 
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.gwtwr.jumpingcrab.com" // Your production backend
-    : "http://localhost:3001";
+const baseUrl = "https://api.gwtwr.jumpingcrab.com";
 
 function signup({ name, avatar, email, password }) {
   return fetch(`${baseUrl}/signup`, {

@@ -1,7 +1,4 @@
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.gwtwr.jumpingcrab.com"
-    : "http://localhost:3001";
+const baseUrl = "https://api.gwtwr.jumpingcrab.com";
 
 function getItems() {
   return fetch(`${baseUrl}/items`)
